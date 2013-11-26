@@ -4,16 +4,17 @@
 % Top level function for Gram-Schmidt
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+x = linspace(0,3,4);
 
-number_of_orthonormal_functions = 6;
-n = number_of_orthonormal_functions;
+number_of_orthonormal_functions = 3;
+n = number_of_orthonormal_functions - 1;
 
-% Generate V
+% Generate V (linearly independent functions)
 V = generate_v(x, n);
 
-% Gram-Schmidt
+% Gram-Schmidt to generate g functions (resulting orthogonal functions)
 
-G = gram_schmidt(x, n, v);
+[E, G] = gram_schmidt(x, n, V);
 
 % e-coefficients
 
@@ -22,5 +23,5 @@ G = gram_schmidt(x, n, v);
 % Normalise
 
 % Verify orthonormality
-
+G
 % Plot

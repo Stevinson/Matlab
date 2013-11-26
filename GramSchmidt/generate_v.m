@@ -7,11 +7,11 @@
 
 function V = generate_v(x, n);
   
-V = zeros(n, length(x));
+V = zeros(n+1, length(x));
 
-    for i = 1:n
+    for i = 1:n+1
         for j = 1:length(x)
-        V(i,j) = x(j)^i;
+        V(i,j) = x(j)^(i-1);
         end
     end
 

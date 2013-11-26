@@ -5,13 +5,27 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function  g = gram_schmidt(n, x, v);
+function  g = gram_schmidt(x, n, v);
 
-g = zeros(n, length(x));
+G = zeros(n, length(x));
 
-e = zeros(n, length(x));
+E = zeros(n, length(x));
 
-for 
+G(1,:) = V(1,:);      % Set G0(x) = V0(x)
+
+for i = 1:n
+    
+    G(n+1,:) = V(n+1,:);
+    
+    for j = 1:i  % Note 1:i means that for each incremental vector you can
+                 % have one more value of E
+        
+         E(i+1,j) = innerproduct(x, V(i+1,:), G(i,:)) / innerproduct(x, G(i,:), G(i,:));
+         G(i+1,:) = V(i+1,:) - E(i+1,j)*G(j,:);
+    end
+end
+
+end
 
 
 

@@ -6,8 +6,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-function [result] = innerproduct(x, y1, y2)
+function [result] = innerproduct(x, a, b)
    
-    result = trapz(x, y1.*y2.*exp(-x));
+    result = trapz(x, a.*b.*exp(-x));
     
 end
